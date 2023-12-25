@@ -40,7 +40,7 @@ export const deleteContactThunk = createAsyncThunk(
     }
   }
 );
-
+//-----------------------------------------------------------------
 //TODO: further functionality will be implemented when I got some free time lol
 
 // export const patchContact = createAsyncThunk(
