@@ -21,10 +21,13 @@ export const ContactList = () => {
             <p className={styles.user}>
               <b className={styles.userName}>{item.name}</b>
             </p>
-            <span>{item.number}</span></div>
+            <span>{item.number}</span>
+            </div>
             <button
               type="button"
+              name={item.name}
               onClick={() => dispatch(deleteContactThunk(item.id))}
+              
             >
               Delete
             </button>

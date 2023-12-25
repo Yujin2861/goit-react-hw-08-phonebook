@@ -8,7 +8,7 @@ import {
 const contactsInitialState = { items: [], error: null, isLoading: false };
 
 const contactSlice = createSlice({
-  name: 'phone',
+  name: 'contacts',
   initialState: contactsInitialState,
   extraReducers: builder => {
     builder
@@ -29,13 +29,18 @@ const contactSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(deleteContactThunk.fulfilled, (state, action) => {
-        state.items = state.items.filter(item => item.id !== action.payload);
-        state.error = null;
+        
         state.isLoading = false;
+        state.error = null;
+        const idx = state.items.findIndex(item => item.id === action.payload.id);
+        state.items.splice(idx, 1);
+
+        
       })
       .addCase(deleteContactThunk.rejected, (state, action) => {
-        state.error = action.payload;
+        
         state.isLoading = false;
+        state.error = action.payload;
       })
 
       .addCase(addContactThunk.pending, state => {

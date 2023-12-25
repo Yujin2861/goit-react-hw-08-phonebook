@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 // import { addContact, deleteContact, getContacts } from 'service/API';
 
+
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const getContactsThunk = createAsyncThunk(
