@@ -8,7 +8,7 @@ import {
 const contactsInitialState = { items: [], error: null, isLoading: false };
 
 const contactSlice = createSlice({
-  name: 'contacts',
+  name: 'phone',
   initialState: contactsInitialState,
   extraReducers: builder => {
     builder
