@@ -25,9 +25,7 @@ export const ContactList = () => {
             </div>
             <button
               type="button"
-              name={item.name}
               onClick={() => dispatch(deleteContactThunk(item.id))}
-              
             >
               Delete
             </button>

@@ -25,17 +25,13 @@ const contactSlice = createSlice({
         state.isLoading = false;
       })
 
-      .addCase(deleteContactThunk.pending, state => {
-        state.isLoading = true;
-      })
+      .addCase(deleteContactThunk.pending, (state, action) => {})
       .addCase(deleteContactThunk.fulfilled, (state, action) => {
         
         state.isLoading = false;
         state.error = null;
-        const idx = state.items.findIndex(item => item.id === action.payload.id);
-        state.items.splice(idx, 1);
-
-        
+        state.items.findIndex(item => item.id === action.payload.id);
+        state.items.splice(state.items, 1);
       })
       .addCase(deleteContactThunk.rejected, (state, action) => {
         
@@ -59,4 +55,4 @@ const contactSlice = createSlice({
 });
 
 export const contactReducer = contactSlice.reducer;
-export const { addContact, deleteContact } = contactSlice.actions;
+
